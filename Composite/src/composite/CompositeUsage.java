@@ -12,24 +12,24 @@ import composite.implementation.Train;
  *
  * @author artur
  */
-public class Composite {
+public class CompositeUsage {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         
-        Train t = new Train();
-        Locomotive l = new Locomotive();
-        t.getCarriages().add(l);
+        Train train = new Train();
+        Locomotive firstLocomotive = new Locomotive();
+        train.addVehicle(firstLocomotive);
         
         for (int i = 0; i < 10; i++) {
-            t.getCarriages().add(new Carriage());
+            train.addVehicle(new Carriage());
         }
-        Locomotive l2 = new Locomotive();
-        t.getCarriages().add(l2);
-        t.ride();
-        t.brake(56);
+        Locomotive secondLocomotive = new Locomotive();
+        train.addVehicle(secondLocomotive);
+        train.start();
+        train.stop(56);
 
     }
 }

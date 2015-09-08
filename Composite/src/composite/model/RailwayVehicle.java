@@ -10,6 +10,8 @@ package composite.model;
  */
 public interface RailwayVehicle {
 
-    public void brake(int brakePower);
-    
+    public void start();
+
+    public void stop(int brakePower);
+
 }

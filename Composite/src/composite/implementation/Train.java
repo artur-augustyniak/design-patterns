@@ -4,7 +4,6 @@
  */
 package composite.implementation;
 
-import composite.model.LiveVech;
 import composite.model.RailwayVehicle;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,36 +12,29 @@ import java.util.List;
  *
  * @author artur
  */
-public class Train implements LiveVech {
+public class Train implements RailwayVehicle {
 
-    private List<RailwayVehicle> carriages;
+    private final List<RailwayVehicle> carriages;
 
     public Train() {
         this.carriages = new ArrayList<RailwayVehicle>();
     }
 
-    public List<RailwayVehicle> getCarriages() {
-        return carriages;
-    }
-
-    public void setCarriages(List<RailwayVehicle> carriages) {
-        this.carriages = carriages;
+    public void addVehicle(RailwayVehicle v) {
+        carriages.add(v);
     }
 
     @Override
-    public void brake(int brakePower) {
+    public void stop(int brakePower) {
         for (RailwayVehicle railwayVehicle : carriages) {
-            railwayVehicle.brake(brakePower);
+            railwayVehicle.stop(brakePower);
         }
     }
 
     @Override
-    public void ride() {
+    public void start() {
         for (RailwayVehicle r : carriages) {
-            if(r instanceof LiveVech){     
-               LiveVech l = (LiveVech) r;
-               l.ride();
-            }
+                r.start();
         }
     }
 }

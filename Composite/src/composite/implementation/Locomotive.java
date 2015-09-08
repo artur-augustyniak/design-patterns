@@ -4,23 +4,23 @@
  */
 package composite.implementation;
 
-import composite.model.LiveVech;
+
 import composite.model.RailwayVehicle;
 
 /**
  *
  * @author artur
  */
-public class Locomotive implements LiveVech{
+public class Locomotive implements RailwayVehicle {
 
     @Override
-    public void brake(int brakePower) {
-        System.out.println(this + " braking with power: " + brakePower);
+    public void stop(int brakePower) {
+        System.out.println(this + " hamuję z mocą: " + brakePower);
     }
 
     @Override
-    public void ride() {
-        System.out.println("Jadę!!!");
+    public void start() {
+        System.out.println(this + " Jadę!!! i tylko ja napędzam pociąg");
     }
-    
+
 }
