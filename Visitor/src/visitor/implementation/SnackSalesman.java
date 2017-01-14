@@ -19,7 +19,7 @@ public class SnackSalesman implements Visitor{
 
     @Override
     public void visit(StaffArea a) {
-        System.out.println("Salesman Visitor trying to sell coffe to " + a.getCustomers() + " staff members." );
+        System.out.println("Salesman Visitor trying to sell coffe to " + a.getStaffCustomers() + " staff members." );
     }
     
 }

@@ -15,7 +15,7 @@ public class StaffArea implements Element {
 
     private Integer customers = 100;
 
-    public Integer getCustomers() {
+    public Integer getStaffCustomers() {
         return customers;
     }
 

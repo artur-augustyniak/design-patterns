@@ -49,3 +49,5 @@
 /Arena/nbproject/private/
 /Arena/build/
 .idea
+*.iml
+out/*
