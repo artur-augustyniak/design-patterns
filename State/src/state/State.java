@@ -5,10 +5,10 @@
 package state;
 
 import java.util.Random;
-import state.implementation.BrakeSystem;
-import state.implementation.EmergencyBrake;
-import state.implementation.HandBrake;
-import state.model.Brake;
+
+
+import state.model.StateContext;
+
 
 /**
  * http://en.wikipedia.org/wiki/State_pattern
@@ -17,20 +17,15 @@ import state.model.Brake;
  */
 public class State {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        BrakeSystem brake = new BrakeSystem();
-        brake.brake();
+        final StateContext sc = new StateContext();
 
-        Brake[] brakes = {new HandBrake(), new EmergencyBrake()};
-        Random r = new Random();
-        for (int i = 0; i < 10; i++) {
-            brake.setCurrentBrake(brakes[r.nextInt(brakes.length)]);
-            brake.brake();
-        }
-
-
+        sc.writeName("Monday");
+        sc.writeName("Tuesday");
+        sc.writeName("Wednesday");
+        sc.writeName("Thursday");
+        sc.writeName("Friday");
+        sc.writeName("Saturday");
+        sc.writeName("Sunday");
     }
 }
