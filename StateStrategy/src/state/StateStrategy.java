@@ -15,7 +15,7 @@ import state.model.Brake;
  *
  * @author artur
  */
-public class State {
+public class StateStrategy {
 
     /**
      * @param args the command line arguments
