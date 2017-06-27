@@ -3,17 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package arena;
+package filtering;
 
 /**
  *
  * @author aaugustyniak
  */
-class OldKnightsValidator implements KnightValidator {
+interface KnightValidator {
 
-    public boolean validate(Knight knight) {
-
-        return knight.getAge() > 60;
-    }
+    boolean validate(Knight knight);
 
 }
