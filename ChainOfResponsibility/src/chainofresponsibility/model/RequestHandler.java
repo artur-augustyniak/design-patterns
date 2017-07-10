@@ -8,6 +8,7 @@ package chainofresponsibility.model;
  *
  * @author artur
  */
+//PROCESSING OBJECT
 public abstract class RequestHandler {
 
     protected RequestHandler nextHandler;

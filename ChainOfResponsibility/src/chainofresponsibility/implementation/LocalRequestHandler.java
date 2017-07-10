@@ -15,6 +15,7 @@ public class LocalRequestHandler extends RequestHandler{
 
     @Override
     public void handleRequest(Request request) {
+        //or other logic
         if (request instanceof LocalRequest) {
             System.out.println("Local request handler processing: " + request.getPayload());
         }else{
