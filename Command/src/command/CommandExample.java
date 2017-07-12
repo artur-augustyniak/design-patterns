@@ -4,7 +4,7 @@
  */
 package command;
 
-import command.implementation.Driver;
+
 import command.implementation.StartEngineCommand;
 import command.implementation.StopEngineCommand;
 import command.implementation.TrainEngine;
@@ -29,7 +29,7 @@ public class CommandExample {
         Command start = new StartEngineCommand(engine);
         Command stop = new StopEngineCommand(engine);
         
-        Invoker driver = new Driver();
+        Invoker driver = new Invoker();
         driver.pushAndExecute(start);
         driver.pushAndExecute(stop);
     }

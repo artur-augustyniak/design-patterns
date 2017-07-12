@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author artur
  */
-public abstract class Invoker {
+public  class Invoker {
 
     protected List<Command> commandStack = new ArrayList<Command>();
 
