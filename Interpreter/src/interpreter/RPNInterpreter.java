@@ -4,8 +4,8 @@
  */
 package interpreter;
 
-import interpreter.implementation.TerminalNumber;
 import interpreter.implementation.Parser;
+import interpreter.implementation.TerminalNumber;
 import interpreter.model.Expression;
 import java.util.HashMap;
 import java.util.Map;

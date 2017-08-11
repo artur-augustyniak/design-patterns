@@ -20,14 +20,14 @@ public class Parser implements Expression {
         Stack<Expression> expressionStack = new Stack<Expression>();
         for (String token : expression.split(" ")) {
             if (token.equals("+")) {
-                Expression subExpression = new TerminalPlus(expressionStack.pop(), expressionStack.pop());
+                Expression subExpression = new NonTerminalPlus(expressionStack.pop(), expressionStack.pop());
                 expressionStack.push(subExpression);
             } else if (token.equals("-")) {
                 // it's necessary remove first the right operand from the stack
                 Expression right = expressionStack.pop();
                 // ..and after the left one
                 Expression left = expressionStack.pop();
-                Expression subExpression = new TerminalMinus(left, right);
+                Expression subExpression = new NonTerminalMinus(left, right);
                 expressionStack.push(subExpression);
             } else {
                 expressionStack.push(new NonTerminalVariable(token));

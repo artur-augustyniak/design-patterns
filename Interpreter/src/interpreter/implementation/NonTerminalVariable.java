@@ -15,7 +15,7 @@ public class NonTerminalVariable implements Expression {
 
     private String name;
 
-    NonTerminalVariable(String token) {
+    public NonTerminalVariable(String token) {
         this.name = token;
     }
 

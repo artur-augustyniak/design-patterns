@@ -11,12 +11,12 @@ import java.util.Map;
  *
  * @author artur
  */
-public class TerminalMinus implements Expression {
+public class NonTerminalMinus implements Expression {
 
     Expression left;
     Expression right;
 
-    public TerminalMinus(Expression left, Expression right) {
+    public NonTerminalMinus(Expression left, Expression right) {
         this.left = left;
         this.right = right;
     }
