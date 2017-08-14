@@ -4,9 +4,10 @@
  */
 package mediator;
 
-import mediator.implementation.CarVechicle;
-import mediator.implementation.TrainVechicle;
-import mediator.implementation.VechicleMediator;
+import mediator.implementation.CarParticipant;
+import mediator.implementation.TrainParticipant;
+import mediator.implementation.TrafficMediator;
+import mediator.model.Participant;
 
 /**
  *
@@ -20,10 +21,17 @@ public class Mediator {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        VechicleMediator dispatcher = new VechicleMediator();
-        dispatcher.setCar(new CarVechicle(dispatcher));
-        dispatcher.setTrain(new TrainVechicle(dispatcher));
-        dispatcher.rideOnRailway();
-        dispatcher.rideOnStreet();
+        TrafficMediator dispatcher = new TrafficMediator();
+
+        CarParticipant cp = new CarParticipant(dispatcher);
+        TrainParticipant tp =  new TrainParticipant(dispatcher);
+
+        dispatcher.setCarParticipant(cp);
+        dispatcher.setTrainParticipant(tp);
+
+        cp.execute();
+        tp.execute();
+
+
     }
 }

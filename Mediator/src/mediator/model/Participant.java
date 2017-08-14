@@ -8,7 +8,7 @@ package mediator.model;
  *
  * @author artur
  */
-public interface Command {
+public interface Participant {
 
     void execute();
 }

@@ -4,27 +4,26 @@
  */
 package mediator.implementation;
 
-import mediator.model.Command;
+import mediator.model.Participant;
 import mediator.model.Mediator;
 
 /**
- *
  * @author artur
  */
-public class CarVechicle implements Command {
+public class CarParticipant implements Participant {
 
     private Mediator mediator;
 
-    public CarVechicle(Mediator mediator) {
+    public CarParticipant(Mediator mediator) {
         this.mediator = mediator;
     }
 
     @Override
     public void execute() {
-        mediator.rideOnStreet();
+        mediator.requestOpenBarriers();
     }
 
-    public void rideOnRoad() {
+    public void move() {
         System.out.println("Car arrives");
     }
 }

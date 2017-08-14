@@ -10,7 +10,7 @@ package mediator.model;
  */
 public interface Mediator {
 
-    public void rideOnRailway();
+    void requestCloseBarriers();
 
-    public void rideOnStreet();
+    void requestOpenBarriers();
 }
