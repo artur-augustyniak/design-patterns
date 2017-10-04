@@ -5,7 +5,6 @@
 package decorator.model;
 
 /**
- *
  * @author artur
  */
 public abstract class CarriageDecorator implements BasicCarriage {
@@ -14,5 +13,9 @@ public abstract class CarriageDecorator implements BasicCarriage {
 
     public CarriageDecorator(BasicCarriage carriage) {
         this.carriage = carriage;
+    }
+
+    public BasicCarriage getDecoratedCarriage() {
+        return carriage;
     }
 }
