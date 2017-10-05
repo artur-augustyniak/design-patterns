@@ -1,40 +1,38 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package memento;
 
-import memento.model.CareTaker;
-import memento.model.Originator;
-import memento.model.State;
+import memento.model.Memento;
+import memento.model.TrainOriginator;
+
 
 /**
- *
  * @author artur
  */
 public class MementoExample {
 
     /**
-     * http://pl.wikipedia.org/wiki/Pami%C4%85tka_%28wzorzec_projektowy%29
      * undo/redo example
      *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        CareTaker careTaker = new CareTaker();
-        Originator train = new Originator();
-        State state = new State();
-        state.setOrigin("Warszawa");
-        state.setDestination("Rzeszów");
-        train.set(state);
-        careTaker.add(train.saveToMemento());
-        state.setOrigin("Warszawa");
-        state.setDestination("Radom");
-        train.set(state);
-        careTaker.add(train.saveToMemento());
 
-        for (int i = 0; i < careTaker.getMementosLength(); i++) {
-            train.restoreFromMemento(careTaker.get(i));
-        }
+        TrainOriginator train = new TrainOriginator();
+
+        train.setOrigin("Warszawa");
+        Memento m1 = train.saveToMemento();
+        train.setDestination("Rzeszów");
+        System.out.println(train.getRelation());
+
+        Memento m2 = train.saveToMemento();
+
+        train.setOrigin("Gdańsk");
+        train.setDestination("Radom");
+        System.out.println(train.getRelation());
+
+        train.restoreFromMemento(m1);
+        System.out.println(train.getRelation());
+
+        train.restoreFromMemento(m2);
+        System.out.println(train.getRelation());
     }
 }

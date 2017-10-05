@@ -1,22 +1,23 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package memento.model;
 
 /**
- *
  * @author artur
  */
 public class Memento {
 
-    private final State state;
+    private final String savedOrigin;
+    private final String savedDestination;
 
-    public Memento(State stateToSave) {
-        state = (State) stateToSave.clone();
+    public Memento(String savedOrigin, String savedDestination) {
+        this.savedOrigin = savedOrigin;
+        this.savedDestination = savedDestination;
     }
 
-    public State getSavedState() {
-        return state;
+    public String getSavedOrigin() {
+        return savedOrigin;
+    }
+
+    public String getSavedDestination() {
+        return savedDestination;
     }
 }
