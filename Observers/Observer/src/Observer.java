@@ -5,11 +5,13 @@
 package observer;
 
 import java.util.Random;
+
 import observer.implementation.Train;
 import observer.implementation.TrainObserver;
 
 /**
  * http://en.wikipedia.org/wiki/Observer_pattern
+ *
  * @author artur
  */
 public class Observer {
@@ -32,7 +34,7 @@ public class Observer {
             String someTrainState = trains[rand.nextInt(trains.length)].getState();
             System.out.println(someTrainState);
             Integer randomIdx = rand.nextInt(trains.length);
-            
+
             if (rand.nextInt(trains.length) > 0) {
                 trains[randomIdx].setTo(newTo[rand.nextInt(trains.length)]);
                 trains[randomIdx].setFrom(newFrom[rand.nextInt(trains.length)]);

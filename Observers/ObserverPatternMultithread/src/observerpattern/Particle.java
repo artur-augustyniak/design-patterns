@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package observerpattern;
 
 import java.util.Observable;
@@ -10,7 +6,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
  * @author artur
  */
 public class Particle extends Observable implements Runnable {
@@ -24,9 +19,6 @@ public class Particle extends Observable implements Runnable {
 
     }
 
-    public Integer getX() {
-        return x;
-    }
 
     public void setX(Integer x) {
         this.x = x;
@@ -38,13 +30,14 @@ public class Particle extends Observable implements Runnable {
 
     @Override
     public void run() {
-        while(1==1){
-        
-        this.setX(r.nextInt());
+        for (int i = 0; i < 100; i++) {
+
+            this.setX(r.nextInt());
             try {
-                Thread.currentThread().sleep(1233);
+                Thread.currentThread().sleep(Math.abs(r.nextInt() % 12000));
             } catch (InterruptedException ex) {
                 Logger.getLogger(Particle.class.getName()).log(Level.SEVERE, null, ex);
+
             }
         }
     }
